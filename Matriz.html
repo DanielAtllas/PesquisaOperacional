@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pesquisa Operacional - Revisão Matriz</title>
+        <meta name="description" content="Esta é uma página referente a estudos sobre Pesquisa Operacional">
+    </head>
+    <body>
+        <h1>Pesquisa Operacional - Revisão sobre Matriz</h1>
+
+        <p>Antes de iniciarmos nosso estudo sobre pesquisa operacional, é importante retornarmos a matéria de <strong>álgebra linear</strong> e seu conteúdo sobre matrizes e suas operações. Diante disso, iremos partir do princípio e entender um pouco melhor como funciona o processo de criação de uma triz, o qual se dá no desenho/construção de uma <strong>tabela com N colunas e N linhas</strong>, as quais possuem posições e valores para cada elemento. Dessa forma, temos que uma matriz possui tamanho <strong>NxN ou NxM</strong>.</p>
+        
+        <ul>
+            <li><strong>Matriz NxN</strong></li>
+        </ul>
+        <pre>
+            <strong>3x3 = | 1  2  3 |
+                  | 4  5  5 |
+                  | 7  8  9 |</strong>
+        </pre>
+        
+        <ul>
+            <li><strong>Matriz NxM</strong></li>
+        </ul>
+        <pre>
+            <strong>3x2 = | 1  2 |
+                  | 4  5 |
+                  | 7  8 |</strong>
+        </pre>
+        <hr>
+        <h2>Soma de matrizes e multiplicação por escalar</h2>
+        
+        <p>No processo de <strong>soma</strong> entre duas ou mais matrizes, dizemos que a operação a ser realizada deverá ocorrer entre matrizes <strong>de mesmo tamanho</strong>. Dessa forma, seus elementos são calculados por <strong>posição copatível</strong>, como no exemplo a seguir:</p>
+        
+        <ul>
+            <li><strong>Am + Bm</strong></li>
+        </ul>
+        <pre>
+            <strong>A  = | 1  2 |
+                 | 3  4 |</strong>
+                 
+                 
+            <strong>B  = | 5  6 |
+                 | 7  8 |</strong>
+                 
+                 
+            <strong>A+B  = | (1+5)  (2+6) |
+                   | (4+7)  (5+8) |</strong>
+                   
+            
+            <strong>A+B  = | 6   8  |
+                   | 10  12 |</strong>
+        </pre>
+        
+        <p>Já no processo de <strong>multiplicação por escalar</strong>, a a operação é realizada de forma única para cada elemento, ou seja, <strong>é multiplicado o escalar por cada elemento</strong> de forma bem simples, da seguinte maneira:</p>
+        
+        <ul>
+            <li><strong>Am - 2.Bm</strong></li>
+        </ul>
+        <pre>
+            <strong>A  = | 1  2 |
+                 | 3  4 |</strong>
+                 
+                 
+            <strong>2.B  = | (2.5)  (2.6) |
+                   | (2.7)  (2.8) |</strong>
+                 
+            
+                   <strong>| 1  2 |  -  | 10  14 |
+                   | 3  4 |     | 18  16 |</strong>
+            
+            
+            <strong>A-2.B  = | -9   12 |
+                     | 15   11 |</strong>
+            
+        </pre>
+        
+        <p>Diante deste conceito, temos então o seguinte teorema: <strong>Sejam A, B e C matrizes de mesmo tamanho, e sejam "r" e "s"  escalares, temos:</strong></p>
+        
+        <ul>
+            <li>A+B = B+A</li>
+            <br>
+            <li>(A+B)+C = A+(B+C)</li>
+            <br>
+            <li>A+0 = A</li>
+            <br>
+            <li>r.(A+B) = (r.A)+(r.B)</li>
+            <br>
+            <li>(r+s).A = (r.A)+(s.A)</li>
+            <br>
+            <li>r.(s.A) = (r.s).A</li>
+        </ul>
+        <hr>
+        <h2>Multiplicação de matrizes</h2>
+        
+        <p>No caso da necessidade de multiplicação entre duas matrizes, de <strong>tamanhos diferentes</strong> temos a regra de que a <strong>quantidade de colunas de Am deve ser igual a quantidade de linhas de Bm</strong>, ou seja, a multiplicação só poderá ser aplicada neste caso, gereando assim uma matriz resultante Rm. Para isso então, coletamos <strong>os elementos da matriz Am e multiplicamos pelas colunas de Bm</strong>, do seguinte modo</p>
+        
+        <pre>
+            <strong>A  = | 2   3 |
+                 | 1  -5 |</strong>
+                 
+                 
+            <strong>B  = | 4   3  6 |
+                 | 1  -2  3 |</strong>
+                 
+                 
+    Logo, a quantidade de colunas de Am é exatamente a mesma quantidade de linhas de Bm. Por tanto, realizaremos a multiplicação:
+            
+            <strong>A.B  = | 2   3 |  *</strong>  <strong style="color: red">| 4 |</strong>  =  <strong style="color: red">| (2.4)+( 3.1) |</strong>  =  <strong style="color: red">| 11 |</strong>
+                   <strong>| 1  -5 |</strong>     <strong style="color: red">| 1 |</strong>     <strong style="color: red">| (1.4)+(-5.1) |</strong>     <strong style="color: red">| -1 |</strong>
+            
+                   <strong>| 2   3 |  *</strong>  <strong style="color: green">|  3 |</strong>  =  <strong style="color: green">|  0 |</strong>  
+                   <strong>| 1  -5 |   </strong>  <strong style="color: green">| -2 |</strong>     <strong style="color: green">| 13 |</strong>
+                   
+                   <strong>| 2   3 |  *</strong>  <strong style="color: deeppink">| 6 |</strong>  =  <strong style="color: deeppink">| 21 |</strong>  
+                   <strong>| 1  -5 |   </strong>  <strong style="color: deeppink">| 3 |</strong>     <strong style="color: deeppink">| -9 |</strong>
+                   
+                   
+            <strong>A.B  = | 11   0  21 |
+                   | -1  13  -9 |</strong>
+        </pre>
+        
+        <p>Diante disso, temos a implementação do seguinte teorema: <strong>Se Am é matriz a ser multiplicada por B e C, de tamanhos corretos, temos:</strong></p>
+        
+        <ul>
+            <li>A(B.C) = (A.B).C</li>
+            <br>
+            <li>A.(B+C) = (A.B) + (A.C)</li>
+            <br>
+            <li>r.(A.B) = (r.A).B = A.(r.B)</li>
+        </ul>
+        <hr>
+        <h2>Divisão de matrizes</h2>
+        
+        <p>Por fim, temos o processo de divisão entre matrizes, onde é calculado o <strong>produto da matriz Am pela inversa da matriz Bm</strong>, do seguinte modo:</p>
+        
+        <ul>
+            <li><strong>Am / Bm</strong></li>
+        </ul>
+        <pre>
+            <strong>A/B = A.B^-1</strong>
+                 
+                 
+            <strong>B  = | 3  4 |
+                 | 2  5 |</strong>
+                 
+            <strong>B^-1  = | 3  4 |</strong>  *  <strong style="color: red">| a  b |</strong>  = <strong style="color: red">| 1  0 |</strong> 
+                    <strong>| 2  5 |</strong>     <strong style="color: red">| c  d |</strong>    <strong style="color: red">| 0  1 |</strong> 
+                    
+            
+    Diante disso, temos:
+            
+            <strong>B^-1 = </strong>
+            
+            (3.a) + (4.b) = 1   (2.a) + (5.b) = 0
+            
+            
+            (3.c) + (4.d) = 0   (2.c) + (5.d) = 1
+            
+    
+    Ao descobirmos o valor de a,b,c,d teremos a matriz inversa de Bm e podemos realizar a multiplicação final, onde:
+    
+            
+            <strong>A.B^-1  = | 1  2 |</strong>  *  <strong style="color: red">| a  b |</strong>  =  <Strong>A/B</Strong>
+                      <strong>| 3  4 |</strong>     <strong style="color: red">| c  d |</strong> 
+        </pre>
+    </body>
+</html>
